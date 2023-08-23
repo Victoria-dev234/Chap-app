@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+svg{
+    fill: #fff;
+}
+
+/* || VARIABLES */
+:root {
+    --GRADIENT-BGCOLOR: linear-gradient(to right, hsl(264, 100%, 61%),hsl(293, 100%, 63%));
+    --GRADIENT-CHAT-BGCOLOR: linear-gradient(to right, hsl(293, 100%, 63%),hsl(264, 100%, 61%));
+    --APP-BGCOLOR: hsl(270, 20%, 96%);
+    --BUTTON-COLOR: hsl(271, 36%, 24%);
+    --RADIO-OUTLINE: hsl(289, 100%, 72%);
+    --LEFT-CHAT-FONTCOLOR: hsl(276, 55%, 52%);
+    --RIGHT-CHAT-FONTCOLOR: hsl(271, 15%, 43%);
+    --SUBHEADING-APP-COLOR: hsl(276, 100%, 81%);
+    --PLACEHOLDER-COLOR: hsl(206, 6%, 79%);
+    --HEADING-COLOR: hsl(271, 36%, 24%);
+    --PARAGRAPH-COLOR: hsl(270, 7%, 64%);
+}
+
+/* || GENERAL STYLES */
+body {
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    font-size: clamp(1rem, 2.2vh, 1.2rem);
+    letter-spacing: 0.025rem;
+}
+
+.primary-shape{
+    width: 500px;
+    height: 100%;
+    background-image: var(--GRADIENT-BGCOLOR);
+    border-bottom-left-radius: 50%; 
+    border-bottom-right-radius: 50%;
+
+    position: fixed;
+    top: -400px;
+    left: -300px;
+}
+
+/* || PHONE */
+.phone {
+    max-width: 260px;
+    height: auto;
+    background-color: var(--APP-BGCOLOR);
+    border: 10px solid #ffffff;
+    border-radius: 30px;
+    box-shadow: 4px 8px 30px rgba(136, 56, 255, 0.507);
+    
+    position: relative;
+    top: 70px;
+    left: 60px;
+}
+
+.phone__profile {
+    background-image: var(--GRADIENT-BGCOLOR);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 2px 3px rgba(136, 56, 255, 0.74);
+    color: #ffffffc5;
+    padding: 0 5%;
+    /* margin-bottom: 0.6rem; */
+}
+
+.profile__shape{
+    max-width: 140px;
+    height: 25px;
+    background-color: rgb(255, 255, 255);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    
+    position: relative;
+    top: -1px;
+    right: -40px;
+}
+
+.phone__profile img {
+    margin-left: 0.2rem;
+    max-width: 13%;
+    height: auto;
+    border: 2px solid #ffffff9a;
+    border-radius: 50%;
+}
+
+.profile__menu {
+    display: flex;
+    align-items: center;
+    padding: 5% 0;
+}
+
+.profile__info {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.4rem;
+}
+
+.profile__info h2{
+    margin-bottom: 0.25rem;
+}
+
+.profile__info p{
+    color: var(--SUBHEADING-APP-COLOR);
+}
+
+.chat__screen {
+    padding: 4.5% 3.5%;
+}
+
+.phone__chat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.chat__message {
+    background-color: hsla(264, 100%, 61%, 0.116);
+    letter-spacing: 0;
+    padding: 3% 4%;
+    margin-right: 5rem;
+    font-size: 0.54rem;
+    line-height: 0.8rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 5px;
+    color: var(--LEFT-CHAT-FONTCOLOR);
+}
+
+.phone__chat__reply{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    text-align: left;
+    margin: 1rem 0;
+}
+
+.chat__image{
+    display: flex;
+    justify-content: right;
+    gap: 0.6rem;
+}
+
+.chat__image img {
+    max-width: 20%;
+    border-radius: 10px;
+}
+
+.chat__reply{
+    background-color: #fff;
+    color: var(--RIGHT-CHAT-FONTCOLOR);
+    margin-left: 5rem;
+    letter-spacing: 0;
+    padding: 3% 4%;
+    font-size: 0.54rem;
+    line-height: 0.8rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.178);
+}
+
+.chat__reply__alt {
+    margin-left: 8rem;
+    text-align: right;
+}
+
+.message__option{
+    background-image: var(--GRADIENT-CHAT-BGCOLOR);
+    color: #ffffffa2;
+    letter-spacing: 0;
+    padding: 4% 5%;
+    margin-right: 3rem;
+    font-size: 0.54rem;
+    line-height: 0.8rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 5px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.circle {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.322);
+}
+
+.message__input{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.message__option span{
+    font-size: 0.8rem;
+    color: #fff; 
+}
+
+.reply__box{
+    background-color: #fff;
+    padding: 2% 2%;
+    padding-left: 7%;
+    color: var(--PLACEHOLDER-COLOR);
+    border-radius: 20px;
+    font-size: 0.57rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reply__box span{
+    background-color: var(--BUTTON-COLOR);
+    padding: 2% 2%;
+    border-radius: 50%;
+}
+
+/* || SECONDARY-SHAPE */
+.secondary-shape{
+    width: 500px;
+    height: 100%;
+    background-color: hsla(264, 100%, 61%, 0.089);
+    border-top-left-radius: 50%; 
+    border-top-right-radius: 50%;
+
+    position: fixed;
+    top: 400px;
+    right: -300px;
+    z-index: -1;
+} 
+
+/* || SUB-HEADING */
+.info{
+    text-align: center;
+}
+
+.info__text {
+    padding: 7% 5%;
+    position: relative;
+    bottom: -100px;
+}
+
+.info__text h1{
+    color: var(--HEADING-COLOR);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.info__text p{
+    color: var(--PARAGRAPH-COLOR);
+    font-size: 1rem;
+    line-height: 2rem;
+} 
+
+@media  screen and (min-width: 1024px) {
+    .body{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        padding-bottom: 4rem;
+    }
+
+    .info__text{
+        text-align: left;
+        padding: unset;
+        padding-right: 5rem;
+    }
+}
+
+@media screen and (min-width: 1440px){
+    .body{
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        gap: 1rem;
+        padding-bottom: 4rem;
+    }
+
+    .primary-shape{
+        width: 700px;
+        top: -100px;
+        left: -300px;
+    }
+
+    .phone{
+        left: 300px;
+    }
+
+    .info__text{
+        text-align: left;
+        padding: unset;
+        padding-right: 15rem;
+    }
+
+    .secondary-shape{
+        width: 700px;
+        top: 200px;
+        right: -350px;
+    }
+
+}
